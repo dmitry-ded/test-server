@@ -28,6 +28,18 @@ app.get("/", (req, res) => {
   res.send("Hello, server");
 });
 
+app.post("/add-user", (req, res) => {
+  const { name } = req.body;
+
+  if(!name) {
+    return res.status(404).json({ error: "Укажите имя!"})
+  }
+
+  usersDB.push({ name });
+
+  res.status(201).json({ users: usersDB, last: usersDB.length })
+})
+
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
