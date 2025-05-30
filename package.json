@@ -3,13 +3,9 @@
   "version": "1.0.0",
   "main": "api/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node api/index.js"
   },
-  "author": "",
-  "license": "ISC",
   "type": "module",
-  "description": "",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.1.0"
