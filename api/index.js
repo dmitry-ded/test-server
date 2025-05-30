@@ -18,7 +18,7 @@ const usersDB = [
   { name: "Jack" },
 ];
 
-app.get("/api/short-polling", (req, res) => {
+app.get("/short-polling", (req, res) => {
   const { last } = req.query;
   const fetchUsers = usersDB.slice(last, usersDB.length);
   res.status(200).json({ users: fetchUsers, last: usersDB.length });
